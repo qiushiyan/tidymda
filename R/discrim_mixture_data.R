@@ -2,14 +2,11 @@
 make_discrim_mixture <- function() {
   # register model, set mode, engine and dependency
   parsnip::set_new_model("discrim_mixture")
-  parsnip::set_model_mode(model = "discrim_mixture", mode = "classification")
-  parsnip::set_model_engine(
-    model = "discrim_mixture",
-    mode = "classification",
-    eng = "mda"
-  )
-  parsnip::set_dependency("discrim_mixture", eng = "mda", pkg = "mda")
-  parsnip::set_dependency("discrim_mixture", eng = "mda", pkg = "tidymda")
+  parsnip::set_model_mode("discrim_mixture", "classification")
+  parsnip::set_model_engine("discrim_mixture", "classification","mda")
+
+  parsnip::set_dependency("discrim_mixture", "mda", "mda")
+  parsnip::set_dependency("discrim_mixture", "mda", "tidymda")
 
   # declare main arguments, as in discrim_mixture(arg)
   parsnip::set_model_arg(
@@ -92,3 +89,4 @@ make_discrim_mixture <- function() {
     )
   )
 }
+

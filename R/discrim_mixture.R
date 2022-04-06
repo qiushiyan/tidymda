@@ -4,12 +4,14 @@
 #' `discrim_mixture` defines an LDA extension model that estimates within-class
 #' density using mixture distributions.
 #'
+#' @export
+#'
 #' @param mode A single character string fort the model type. Only possible value
 #'   'classification'.
 #' @param sub_classes An integer for the number of sub-classes in each class.
 #'
 #' @example
-#' discrim_mixture(sub_classes = 3)
+#' \notrun{discrim_mixture(sub_classes = 3)}
 discrim_mixture <-
   function(mode = "classification", sub_classes = NULL) {
     # Check for correct mode
@@ -29,6 +31,10 @@ discrim_mixture <-
       method = NULL,
       engine = NULL
     )
+  }
+
+discrim_mixture_fit <- function() {
+
 }
 
 print.discrim_mixture <- function(x, ...) {
